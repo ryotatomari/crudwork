@@ -1,0 +1,9 @@
+spring:
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/CrudTaskDB
+    username: toma2
+    password: eihuku1111
+  sql:
+    init:
+      mode: always
