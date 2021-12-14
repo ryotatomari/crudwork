@@ -8,10 +8,13 @@
     <h2>一覧ページ</h2>
     <table>
         <tr><th>id</th><th>product_name</th><th>quantity</th></tr>
-        <tr th:each="test : ${testList}">
+        <!-- each 全件データが出尽くすまで表示 -->
+        <!-- controllerからcrud_workを注入 -->
+        <tr th:each="test : ${crud_work}">
+        <!-- データベースのid product_name quantityが注入される -->
             <td th:text="${test.id}"></td>
-            <td th:text="${test.name}"></td>
-            <td th:text="${test.old}"></td>
+            <td th:text="${test.product_name}"></td>
+            <td th:text="${test.quantity}"></td>
             <td>
                 <a href="#" th:href="@{'/sample/edit/' + ${test.id}}"><button>編集</button></a>
             </td>

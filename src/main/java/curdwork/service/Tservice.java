@@ -15,7 +15,7 @@ public class Tservice {
 	Tmapper tmapper;
 	public List<Tentity> searchAll() {
 
-		return tmapper.find();
+		return tmapper.findAll();
 	}
 
 }

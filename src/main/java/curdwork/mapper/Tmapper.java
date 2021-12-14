@@ -9,7 +9,7 @@ import curdwork.entity.Tentity;
 @Mapper
 public interface Tmapper {
 	//read
-	public List<Tentity> find();
+	public List<Tentity> findAll();
 	//insert
 	public void insert(Tentity tentity);
 	//update

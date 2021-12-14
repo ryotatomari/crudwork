@@ -1,25 +1,18 @@
 package curdwork.entity;
 
-import org.springframework.boot.autoconfigure.domain.EntityScan;
 
 import lombok.Data;
 
-@EntityScan
 @Data
 public class Tentity {
+	//id
 	private int id;
-	
+	//商品名
 	private String product_name;
-	
+	//在庫数
 	private int quantity;
 	
-	public Tentity(int id, String product_name, int quantity) {
-		
-		this.id = id;
-		
-		this.product_name = product_name;
-		
-		this.quantity = quantity;
-	}
+	
+	
 
 }
