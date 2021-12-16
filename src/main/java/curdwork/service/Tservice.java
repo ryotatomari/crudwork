@@ -13,9 +13,15 @@ public class Tservice {
 	@Autowired
 	//private
 	Tmapper tmapper;
+	//全件取得
 	public List<Tentity> searchAll() {
 
 		return tmapper.findAll();
 	}
+	//登録
+	public void insert(Tentity tentity) {
+        tmapper.insert(tentity);
+	}
+	
 
 }

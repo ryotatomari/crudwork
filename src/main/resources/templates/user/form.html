@@ -6,11 +6,17 @@
 </head>
 <body>
     <h2>入力フォーム</h2>
-    <form method="post" action="#" th:action="@{/sample/form}" th:object="${testForm}">
-        <label for="name">商品名</label>
-        <input type="text" id="name" name="name" th:value="${testForm.name}"><br>
+    <!-- th：action 宛先 th:object オブジェクトの指定-->
+    <form method="post" th:action="@{/user/form}" th:object="${crud_work}">
+    <label>ID:<input type="text" th:field="*{id}"></label><br>
+    <label>商品名:<input type="text" th:field="*{product_name}"></label><br>
+    <label>在庫数:<input type="text" th:field="*{quantity}"></label><br>
+              
+       <!-- 元原稿
+        <label for="product_name">商品名</label>
+        <input type="text" id="product_name" name="product_name" th:value="${newarrival.product_name}"><br>
         <label for="old">在庫数</label>
-        <input type="text" id="old" name="old" th:value="${testForm.old}"><br>
+        <input type="text" id="quantity" name="quantity" th:value="${newarrival.quantity}"><br>-->
         <input type="submit" value="送信">
     </form>
     <div><a href="#" th:href="@{/sample}">トップページ</a></div>
