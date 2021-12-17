@@ -9,4 +9,17 @@
     SELECT * 
     FROM crud_work
   </select>
+  
+  <insert id="insert">
+    insert into crud_work (
+        id,
+        product_name,
+        quantity
+    )
+    values (
+        #{id},
+        #{product_name,},
+        #{quantity}
+    )
+  </insert>
 </mapper>
