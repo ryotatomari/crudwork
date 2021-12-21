@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import curdwork.entity.Tentity;
@@ -39,5 +40,21 @@ public class Tcontoroller {
 		 tservice.insert(tentity);
 	        return "user/form";
 	 }
+	 //編集画面に遷移して、１件の情報を取り出す	 
+	 @GetMapping(value = "/user/edit/{id}")
+	//@PathVariableアノテーションを指定すると、URLに含まれる動的なパラメータを受け取ることができる
+	 //動的なパラメータを受け取ったeditoneメソッドは、サービスクラスを呼び出す
+	  public String editone(@PathVariable int id,Model model) {
+		 
+		 Tentity tentity = tservice.findById(id);
+		model.addAttribute("tentity", tentity);
+	    return "user/edit";  
+	 }
+	 //編集画面の更新情報を受け取る
+	 @PostMapping("/user/edit/{id}") 
+	    public String update(Tentity tentity) {
+	        tservice.update(tentity);
+	        return "user/edit";
+	    }
 
 }

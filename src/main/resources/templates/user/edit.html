@@ -6,13 +6,17 @@
 </head>
 <body>
     <h2>編集フォーム</h2>
-    <form method="post" action="#" th:action="@{'/sample/edit/' + ${testForm.id}}" th:object="${testForm}">
-        <label for="name">商品名</label>
-        <input type="text" id="name" name="name" th:value="${testForm.name}"><br>
-        <label for="old">在庫数</label>
-        <input type="text" id="old" name="old" th:value="${testForm.old}"><br>
+    <!-- th：action 宛先・・contorollerクラスの登録画面用のURl
+     th:object オブジェクトの指定・・contorollerクラスからここに注入-->   
+    <form method="post" th:action="@{'/user/edit/' + ${id}}" th:object="${tentity}">
+        <!--<label>ID:<input type="text" th:field="*{id}"></label><br> -->
+        <label>商品名:<input type="text" th:field="*{product_name}"></label><br>
+        <label>在庫数:<input type="text" th:field="*{quantity}"></label><br>
+         
+         <!--submitで内容を送付-->     
         <input type="submit" value="送信">
     </form>
-    <div><a href="#" th:href="@{/sample}">トップページ</a></div>
+    
+    <div><a href="#" th:href="@{/user/product_list}">トップページ</a></div>
 </body>
 </html>

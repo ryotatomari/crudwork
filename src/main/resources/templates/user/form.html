@@ -7,21 +7,15 @@
 <body>
     <h2>入力フォーム</h2>
     <!-- th：action 宛先・・contorollerクラスの登録画面用のURl
-     th:object オブジェクトの指定・・contorollerクラスのmodelAttributeの引数
-     -->
-    
+     th:object オブジェクトの指定・・contorollerクラスからここに注入-->   
     <form method="post" th:action="@{/user/form}" th:object="${tentity}">
-    
-    
-    <label>ID:<input type="text" th:field="*{id}"></label><br>
+        
+     <!--<label>ID:<input type="text" th:field="*{id}"></label><br>--> 
+     
     <label>商品名:<input type="text" th:field="*{product_name}"></label><br>
     <label>在庫数:<input type="text" th:field="*{quantity}"></label><br>
               
-     <!-- 一時退避ブロック3 
-        <label for="product_name">商品名</label>
-        <input type="text" id="product_name" name="product_name" th:value="${newarrival.product_name}"><br>
-        <label for="old">在庫数</label>
-        <input type="text" id="quantity" name="quantity" th:value="${newarrival.quantity}"><br>-->
+     <!--submitで内容を送付-->
         <input type="submit" value="送信">
     </form>　
     

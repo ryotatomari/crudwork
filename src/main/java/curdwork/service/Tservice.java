@@ -18,10 +18,20 @@ public class Tservice {
 
 		return tmapper.findAll();
 	}
-	//登録
+	//登録（
 	public void insert(Tentity tentity) {
         tmapper.insert(tentity);
 	}
+	//１件取得　編集画面のために必要 SpringBoot+MyBatis+MySQLの初歩
+	public Tentity findById(int id) {
+        return tmapper.findById(id);
+    }
+	//更新
+	public void update(Tentity tentity) {
+		tmapper.update(tentity);
+		
+	}
+
 	
 
 }

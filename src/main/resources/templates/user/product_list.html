@@ -16,7 +16,8 @@
             <td th:text="${test.product_name}"></td>
             <td th:text="${test.quantity}"></td>
             <td>
-                <a href="#" th:href="@{'/sample/edit/' + ${test.id}}"><button>編集</button></a>
+            <!-- 編集画面（更新）に飛ぶ -->
+                <a th:href="@{'/user/edit/' + ${test.id}}"><button>編集</button></a>
             </td>
             <td>
                 <form action="#" th:action="@{'/sample/delete/' + ${test.id}}" method="post">

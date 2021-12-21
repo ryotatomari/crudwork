@@ -12,9 +12,15 @@ public interface Tmapper {
 	public List<Tentity> findAll();
 	//insert
 	public void insert(Tentity tentity);
+	
+	//read1件取得 https://qiita.com/fftcy-sttkm/items/57e8596820cff28ec682
+	public Tentity findById(int id);
+	
 	//update
 	public void update(Tentity tentity);
 	//delete
 	public void delete(Tentity tentity);
-    //read
+
+
+	
 }

@@ -9,7 +9,7 @@
     SELECT * 
     FROM crud_work
   </select>
-  
+ <!-- insert処理　selectで囲む 登録--> 
   <insert id="insert">
     insert into crud_work (
         id,
@@ -22,4 +22,17 @@
         #{quantity}
     )
   </insert>
+<!-- select処理1件　update画面の表示のために必要 https://qiita.com/fftcy-sttkm/items/57e8596820cff28ec682-->  
+  <select id="findById" resultType="curdwork.entity.Tentity">
+    select  *
+    from    crud_work
+    where   id = #{id}   
+  </select>
+  <update id="update">
+    update crud_work set
+    id = #{id},
+    product_name = #{product_name},
+    quantity = #{quantity},
+  where id = #{id}
+</update>
 </mapper>
