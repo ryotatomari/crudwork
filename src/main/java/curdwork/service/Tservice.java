@@ -31,6 +31,11 @@ public class Tservice {
 		tmapper.update(tentity);
 		
 	}
+	//削除
+	public void delete(Tentity tentity) {
+		tmapper.delete(tentity);
+		
+    }
 
 	
 

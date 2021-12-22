@@ -22,7 +22,7 @@
         #{quantity}
     )
   </insert>
-<!-- select処理1件　update画面の表示のために必要 https://qiita.com/fftcy-sttkm/items/57e8596820cff28ec682-->  
+<!-- select処理1件　-->  
   <select id="findById" resultType="curdwork.entity.Tentity">
     select  *
     from    crud_work
@@ -32,7 +32,12 @@
     update crud_work set
     id = #{id},
     product_name = #{product_name},
-    quantity = #{quantity},
+    quantity = #{quantity}
   where id = #{id}
-</update>
+  </update>
+  <delete id="delete">
+     delete 
+     from  crud_work 
+     where id = #{id}
+  </delete>
 </mapper>

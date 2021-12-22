@@ -50,11 +50,18 @@ public class Tcontoroller {
 		model.addAttribute("tentity", tentity);
 	    return "user/edit";  
 	 }
-	 //編集画面の更新情報を受け取る
+	 //編集画面の更新処理
 	 @PostMapping("/user/edit/{id}") 
 	    public String update(Tentity tentity) {
 	        tservice.update(tentity);
 	        return "user/edit";
 	    }
+	 //削除
+	 //delateメソッドで実行　サービスクラスを呼び出し削除後、一覧画面にリダイレクト
+	 @PostMapping("/user/delete/{id}")
+	    public String delete(Tentity tentity) {
+	        tservice.delete(tentity);
+	        return "redirect:/user/product_list";
+	 }
 
 }
