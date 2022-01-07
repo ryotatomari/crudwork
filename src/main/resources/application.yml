@@ -1,8 +1,8 @@
 spring:
   datasource:
     driverClassName: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/CrudTaskDB
-    username: toma2
+    url: jdbc:mysql://db-crudwork.cs68ex2aurtb.ap-northeast-1.rds.amazonaws.com:3306/CrudTaskDB
+    username: admin
     password: eihuku1111
   sql:
     init:
